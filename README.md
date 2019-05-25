@@ -1,6 +1,6 @@
 # sh-app8-day08-1
 
-hello world
+你好 ，张三
 
 im your father
 
