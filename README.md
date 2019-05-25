@@ -1,6 +1,6 @@
 # sh-app8-day08-1
 
-hello world
+hello 李四
 
 im your father
 
