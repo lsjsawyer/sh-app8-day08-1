@@ -1,15 +1,25 @@
-﻿import time
-
 import allure
-import pytest
+
+from base.get_driver import get_phone_driver
+from base.page import Page
 
 
-class Test_002:
+class TestHslOpen:
 
-    @pytest.allure.severity(pytest.allure.severity_level.MINOR)
-    @allure.step(title="这是放入截图的测试步骤")
-    def test_add_png(self):
-        print("我是截图")
-        with open("C:\\Users\\86131\\Desktop\\sh-app8-day08-1\\images\\rooo.png", "rb") as f:
-            allure.attach("我是超人{}".format(time.strftime('%Y%m%r_%H%M%S')), f.read(), allure.attach_type.PNG)
-        assert True
+    def setup_class(self):
+        self.driver = get_phone_driver("com.hsl.stock", ".module.main.StartV2Activity")
+        self.page = Page(self.driver)
+
+    def teardown_class(self):
+        self.driver.quit()
+
+
+    def test_01(self):
+        self.page.open_hsl().open_rules_click_agrees()
+        ass = self.page.open_hsl().get_result()
+        assert ass == "兔子人"
+        # ass = self.page.open_hsl().get_result()
+        # assert ass == "涨停成功率"
+
+    def test_02(self):
+        pass
