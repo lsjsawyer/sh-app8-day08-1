@@ -25,7 +25,7 @@ class TestHslOpen:
     def teardown_class(self):
         self.driver.quit()
 
-    @allure.severity(allure.severity_level.BLOCKER)
+    @allure.severity(pytest.allure.severity_level.BLOCKER)
     @allure.step(title="打开app,进入我的页面,输入手机号密码,点击登陆")
     def test_01(self):
         self.page.open_hsl().open_rules_click_agrees()
@@ -43,26 +43,26 @@ class TestHslOpen:
 
 
 
-    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.severity(pytest.allure.severity_level.CRITICAL)
     @allure.step(title="这是test02的测试步骤")
     def test_02(self):
         allure.attach.file(r"C:\Users\86131\Desktop\test_appium\adc.png", attachment_type=allure.attachment_type.PNG,
                            name="Aileen")
         assert True
 
-    @allure.severity(allure.severity_level.NORMAL)
+    @allure.severity(pytest.allure.severity_level.NORMAL)
     @allure.step(title="这是test03的测试步骤")
     def test_03(self):
         print("---->test02<----")
         assert False
 
-    @allure.severity(allure.severity_level.MINOR)
+    @allure.severity(pytest.allure.severity_level.MINOR)
     @allure.step(title="这是test04的测试步骤")
     def test_04(self):
         print("---->test03<----")
         assert True
 
-    @allure.severity(allure.severity_level.TRIVIAL)
+    @allure.severity(pytest.allure.severity_level.TRIVIAL)
     @allure.step(title="这是test05的测试步骤")
     def test_05(self):
         print("---->test04<----")
