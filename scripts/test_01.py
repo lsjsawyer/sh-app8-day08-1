@@ -25,7 +25,7 @@ class TestHslOpen:
     def teardown_class(self):
         self.driver.quit()
 
-    @allure.severity(pytest.allure.severity_level.BLOCKER)
+    @allure.severity(allure.severity_level.BLOCKER)
     @allure.step(title="打开app,进入我的页面,输入手机号密码,点击登陆")
     def test_01(self):
         self.page.open_hsl().open_rules_click_agrees()
@@ -34,7 +34,7 @@ class TestHslOpen:
         allure.attach("aini1314", "密码")
         assert ass == "兔子人"
         # png_name = "./images" + os.sep + "{}.png".format(int(time.time()))
-        png_time = "C:/Users/86131/Desktop/sh-app8-day08-1/images/%s.png" % int(time.time())
+        png_time = "./images/%s.png" % int(time.time())
         self.driver.get_screenshot_as_file(png_time)
         allure.attach.file(r"%s" % png_time, attachment_type=allure.attachment_type.PNG,
                            name="Cileen")
@@ -43,26 +43,26 @@ class TestHslOpen:
 
 
 
-    @allure.severity(pytest.allure.severity_level.CRITICAL)
+    @allure.severity(allure.severity_level.CRITICAL)
     @allure.step(title="这是test02的测试步骤")
     def test_02(self):
-        allure.attach.file(r"C:/Users/86131/Desktop/sh-app8-day08-1/adc.png", attachment_type=allure.attachment_type.PNG,
+        allure.attach.file(r"./adc.png", attachment_type=allure.attachment_type.PNG,
                            name="Aileen")
         assert True
 
-    @allure.severity(pytest.allure.severity_level.NORMAL)
+    @allure.severity(allure.severity_level.NORMAL)
     @allure.step(title="这是test03的测试步骤")
     def test_03(self):
         print("---->test02<----")
         assert False
 
-    @allure.severity(pytest.allure.severity_level.MINOR)
+    @allure.severity(allure.severity_level.MINOR)
     @allure.step(title="这是test04的测试步骤")
     def test_04(self):
         print("---->test03<----")
         assert True
 
-    @allure.severity(pytest.allure.severity_level.TRIVIAL)
+    @allure.severity(allure.severity_level.TRIVIAL)
     @allure.step(title="这是test05的测试步骤")
     def test_05(self):
         print("---->test04<----")
