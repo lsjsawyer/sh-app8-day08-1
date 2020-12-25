@@ -34,7 +34,7 @@ class TestHslOpen:
         allure.attach("aini1314", "密码")
         assert ass == "兔子人"
         # png_name = "./images" + os.sep + "{}.png".format(int(time.time()))
-        png_time = "./images/%s.png" % int(time.time())
+        png_time = "C:/Users/86131/Desktop/sh-app8-day08-1/images/%s.png" % int(time.time())
         self.driver.get_screenshot_as_file(png_time)
         allure.attach.file(r"%s" % png_time, attachment_type=allure.attachment_type.PNG,
                            name="Cileen")
@@ -46,7 +46,7 @@ class TestHslOpen:
     @allure.severity(pytest.allure.severity_level.CRITICAL)
     @allure.step(title="这是test02的测试步骤")
     def test_02(self):
-        allure.attach.file(r".\adc.png", attachment_type=allure.attachment_type.PNG,
+        allure.attach.file(r"C:/Users/86131/Desktop/sh-app8-day08-1/adc.png", attachment_type=allure.attachment_type.PNG,
                            name="Aileen")
         assert True
 
