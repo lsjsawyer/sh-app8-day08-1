@@ -46,7 +46,7 @@ class TestHslOpen:
     @allure.severity(pytest.allure.severity_level.CRITICAL)
     @allure.step(title="这是test02的测试步骤")
     def test_02(self):
-        allure.attach.file(r"C:\Users\86131\Desktop\test_appium\adc.png", attachment_type=allure.attachment_type.PNG,
+        allure.attach.file(r"./adc.png", attachment_type=allure.attachment_type.PNG,
                            name="Aileen")
         assert True
 
