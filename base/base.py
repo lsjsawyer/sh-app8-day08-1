@@ -54,7 +54,7 @@ class Base:
         png_name ="./image" + os.sep + "{}.png".format(int(time.time()))
         self.driver.get_screenshot_as_file(png_name)
         with open(png_name, "rb") as f:
-            allure.attach("截图名字", f.read(), allure.attach_type.PNG)
+            allure.attach("截图名字", f.read(), allure.attachment_type.PNG)
 
 
     def get_toast(self, toast):
